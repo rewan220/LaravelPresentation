@@ -94,6 +94,7 @@
                             
                             @if(Auth::user()->is_admin == 1)
                             <a class="list-group-item list-group-item-action " href="{{route('admin')}}">User's Managment</a>
+                            <a class="list-group-item list-group-item-action " href="{{route('addusers')}}">Queue/Job</a>
                             @endif
                             <a class="list-group-item list-group-item-action " href="">Other2</a>
 

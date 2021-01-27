@@ -19,7 +19,7 @@ class MailController extends Controller
     
             Mail::to($to_email)->send(new SendingMail);
     
-            return view('home')->with('success','Thank you for getting in touch you will recieve an automatic email to confirm your Request');
+            return redirect(route('home'))->with('success','Your report has been succesfully sendet you recieve an confirm email in a minutes');
     
         }
     }

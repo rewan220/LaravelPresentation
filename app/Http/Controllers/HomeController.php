@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\AddMail;
 use Illuminate\Http\Request;
+use App\Models\Advertising;
 
 class HomeController extends Controller
 {
@@ -30,5 +32,18 @@ class HomeController extends Controller
     public function handleAdmin()
     {
         return view('handleAdmin');
+    } 
+    public function sendaddmail()
+    {
+        
+
+        $emailJob = new AddMail();
+        dispatch($emailJob);
+        /*
+        $emails= Advertising::chunk(5,function($data){
+            dispatch(new AddMail($data));
+
+        });*/
+        return redirect(route('home'))->with('success','the job is running in the back end');
     } 
 }

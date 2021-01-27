@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Advertising;
 use Illuminate\Database\Seeder;
 use App\Models\User;
 use Illuminate\Support\Carbon;
@@ -98,6 +99,61 @@ class DatabaseSeeder extends Seeder
         ]);
        
     }
+
+    $add_users = [
+      [
+         'name'=>'rewan',
+         'email'=>'youssefrewan15@gmail.com'
+      ],
+      [
+         'name'=>'rewan1',
+         'email'=>'youssefrewan15@gmail.com'
+      ],
+      [
+         'name'=>'rewan2',
+         'email'=>'youssefrewan15@gmail.com'
+      ],
+      [
+         'name'=>'rewan3',
+         'email'=>'youssefrewan15@gmail.com'
+      ],
+      [
+         'name'=>'rewan4',
+         'email'=>'youssefrewan15@gmail.com'
+      ],
+      [
+         'name'=>'rewan5',
+         'email'=>'youssefrewan15@gmail.com'
+      ],
+      [
+         'name'=>'rewan6',
+         'email'=>'youssefrewan15@gmail.com'
+      ],
+      [
+         'name'=>'rewan7',
+         'email'=>'youssefrewan15@gmail.com'
+      ],
+      [
+         'name'=>'rewan8',
+         'email'=>'youssefrewan15@gmail.com'
+      ],
+      [
+         'name'=>'rewan9',
+         'email'=>'youssefrewan15@gmail.com'
+      ],
+
+
+
+
+      ];
+
+      foreach ($add_users as $add_user) {
+         $newUser =  Advertising::create([
+             'name' => $add_user['name'],
+             'email' => $add_user['email'],
+         ]);
+        
+     }
 
     }
 }

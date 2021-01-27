@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Advertising;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -17,6 +18,11 @@ class AdminController extends Controller
         
         $users = User::all() ;
         return view('Admin.index',['users'=>$users]);
+    }
+    public function showadduser()
+    {
+        $users = Advertising::all() ;
+        return view('Admin.advertisment',['users'=>$users]);
     }
 
     /**

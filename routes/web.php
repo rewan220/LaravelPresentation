@@ -18,6 +18,8 @@ use App\Http\Controllers\MailController;
 |
 */
 
+
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -26,6 +28,8 @@ Route::group(['middleware' => ['admin']], function () {
 
     Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
     Route::get('/admin/delete/{id}' , [App\Http\Controllers\AdminController::class,'destroy'])->name('ems.delete');
+    Route::get('/job' , [App\Http\Controllers\HomeController::class,'sendaddmail'])->name('job');
+    Route::get('/addusers' , [App\Http\Controllers\AdminController::class,'showadduser'])->name('addusers');
 
 
 
