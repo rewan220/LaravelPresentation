@@ -25,7 +25,7 @@
                 </tbody>
               </table>
         </div>
-        <a class="btn btn-sm btn-success" href="{{route('job')}}">Send Advertising's emails</a>
+        <a class="btn btn-sm btn-success" href="{{route('admin.job')}}">Send Advertising's emails</a>
     </div>
 </div>
 </div>
