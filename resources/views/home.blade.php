@@ -40,7 +40,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    Hello {{auth()->user()->name}} You are logged in
                 </div>
             </div>
         </div>

@@ -22,7 +22,10 @@
                     <td>{{$user->name}}</td>
                     <td>{{$user->email}}</td>
                     <td>{{$user->age}}</td>
-                    <td><img src="{{ asset($user->picture) }}" alt="image" style="width:50px" ></td>
+                    <td><img src="{{ asset($user->picture) }}" alt="image"  style=" vertical-align: middle;
+                      width: 50px;
+                      height: 50px;
+                      border-radius: 50%;" ></td>
                     <td><a href="{{ url('admin/delete/'.$user->id) }}" class="btn btn-sm btn-danger">delete</a></td>
                   </tr>
                   @endforeach

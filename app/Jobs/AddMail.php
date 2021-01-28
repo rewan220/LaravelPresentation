@@ -39,7 +39,7 @@ class AddMail implements ShouldQueue
     public function handle()
     {
 
-       $users = Advertising::all();
+       $users = Advertising::get();
        
         foreach ($users as $user) {
 

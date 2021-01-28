@@ -28,7 +28,7 @@ class HomeController extends Controller
         return view('home');
     }
 
-    
+    //this is also a way to see if the  user is  an admin
     public function handleAdmin()
     {
         return view('handleAdmin');

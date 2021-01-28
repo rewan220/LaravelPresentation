@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Advertising;
-use App\Models\User;
+use App\Models\Test;
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class TestController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,16 +14,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        
-        $users = User::all() ;
-        return view('Admin.index',['users'=>$users]);
-    }
-
-    // to show the users who like to revieve A
-    public function showadduser()
-    {
-        $users = Advertising::all() ;
-        return view('Admin.advertisment',['users'=>$users]);
+        //
     }
 
     /**
@@ -51,10 +41,10 @@ class AdminController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Test  $test
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Test $test)
     {
         //
     }
@@ -62,10 +52,10 @@ class AdminController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Test  $test
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Test $test)
     {
         //
     }
@@ -74,10 +64,10 @@ class AdminController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Test  $test
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Test $test)
     {
         //
     }
@@ -85,15 +75,11 @@ class AdminController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Test  $test
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Test $test)
     {
         //
-        $user = User::find($id);
-        $user->delete();
-        $users=User::all();
-        return redirect(route('admin'))->with('warning','user successfully Deleted.') ;
     }
 }

@@ -15,9 +15,13 @@
       <form action="{{route('user.update',auth()->user()->id)}}" method="POST" enctype="multipart/form-data">
          @csrf
          <div>
-            <img src="{{ asset(auth()->user()->picture) }}" alt="image" style="width:90px"  >
+            <img src="{{ asset(auth()->user()->picture) }}" alt="Avatar"
+             style=" vertical-align: middle;
+            width: 100px;
+            height: 100px;
+            border-radius: 30%;">
          </div>
-         <div class="form-group">
+         <div class="form-group" >
              <label for="image">Avatar</label>
              <input id="image"  class="form-control-file" type="file" name="file" accept="image/*">
          </div>
