@@ -19,6 +19,8 @@ class AdminController extends Controller
         $users = User::all() ;
         return view('Admin.index',['users'=>$users]);
     }
+
+    // to show the users who like to revieve Ads
     public function showadduser()
     {
         $users = Advertising::all() ;

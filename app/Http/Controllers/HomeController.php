@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Jobs\AddMail;
 use Illuminate\Http\Request;
 use App\Models\Advertising;
-
+use Illuminate\Support\Facades\DB;
 class HomeController extends Controller
 {
     /**
@@ -33,17 +33,22 @@ class HomeController extends Controller
     {
         return view('handleAdmin');
     } 
+
+
+    //queue and jobs to send the mails to the ads users
     public function sendaddmail()
     {
         
-
-        $emailJob = new AddMail();
-        dispatch($emailJob);
+ 
+        dispatch(new AddMail());
+     return redirect(route('home'))->with('success','the job is running in the back end');        
+        
         /*
+        //if we want to chunk the job like sending 5 in every operation 
         $emails= Advertising::chunk(5,function($data){
             dispatch(new AddMail($data));
 
         });*/
-        return redirect(route('home'))->with('success','the job is running in the back end');
+        
     } 
 }

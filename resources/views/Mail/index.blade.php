@@ -5,6 +5,15 @@
    <div class="card-body">
       <form action="{{route('user.sendet')}}" method="GET" enctype="">
          @csrf
+                  @if ($errors->any())
+            <div class="alert alert-danger">
+               <ul>
+                     @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                     @endforeach
+               </ul>
+            </div>
+         @endif
          <div class="form-group">
             <label for="name">Name</label>
             <input id="name" value="{{auth()->user()->name}}" class="form-control" type="text" name="name" disabled>
@@ -16,7 +25,7 @@
 
          <div class="form-group">
             <label for="about">Message</label>
-            <textarea id="content"  placeholder="about you" class="form-control" rows="4" name="about"></textarea>
+            <textarea id="content"  placeholder="about you" class="form-control" rows="4" name="message" required></textarea>
         </div>
          <div class="form-group">
             <button type="submit" class="btn btn-success">Send</button>

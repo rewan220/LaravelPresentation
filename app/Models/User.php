@@ -51,11 +51,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    //this is also a way to get the user picture
     public function getGravatar()
     {
         $hash = md5(strtolower(trim($this->attributes['email'])));
         return "http://gravatar.com/avatar/$hash";
     }
+
+    //also in this way we can get if the user has a picture or not 
     public function hasPicture()
     {
         if ($this->profile->picture != null) {
@@ -64,6 +67,8 @@ class User extends Authenticatable
             return false;
         }
     }
+
+    //to get the user picture but it is done in the controller 
     public function getPicture()
     {
         return $this->profile->picture;

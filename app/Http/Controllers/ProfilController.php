@@ -81,8 +81,6 @@ class ProfilController extends Controller
             'email' => 'required',
         ]);
 
-
-
         $data =  $request->all();
         $user = User::find($id);
         $user->about = $request['about'];
@@ -105,14 +103,17 @@ class ProfilController extends Controller
         return redirect(route('home'))->with('success','Profile successfully Updated.');
 
         /***
- *
+         * 
+         * this is also another ways to save the data
         $user->fill($request->all());
         if ($request->hasfile('file')) {
             $image = 'storage/'.$request->file->store('profiles');
             $user->picture = $image;
+
+            // return redirect(route('home'))->with('success','Profile successfully Updated.');
         }
-**/
-       // return redirect(route('home'))->with('success','Profile successfully Updated.');
+                 **/
+     
     }
 
     /**

@@ -23,6 +23,8 @@ use App\Http\Controllers\MailController;
 Route::get('/', function () {
     return view('welcome');
 });
+Auth::routes();
+
 
 Route::group(['middleware' => ['admin']], function () {
 
@@ -35,7 +37,7 @@ Route::group(['middleware' => ['admin']], function () {
 
 });
 
-Auth::routes();
+
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
