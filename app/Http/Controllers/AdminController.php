@@ -15,16 +15,27 @@ class AdminController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
 
         $users = User::all();
         return view('Admin.index', ['users' => $users]);
+=======
+        
+        $users = User::all() ;
+        return view('Admin.index',['users'=>$users]);
+>>>>>>> 657f72063665d84ad55de0a6a2e280a851895f98
     }
 
     // to show the users who like to revieve A
     public function showadduser()
     {
+<<<<<<< HEAD
         $users = Advertising::all();
         return view('Admin.advertisment', ['users' => $users]);
+=======
+        $users = Advertising::all() ;
+        return view('Admin.advertisment',['users'=>$users]);
+>>>>>>> 657f72063665d84ad55de0a6a2e280a851895f98
     }
 
     /**
@@ -93,7 +104,12 @@ class AdminController extends Controller
         //
         $user = User::find($id);
         $user->delete();
+<<<<<<< HEAD
         $users = User::all();
         return redirect(route('admin'))->with('warning', 'user successfully Deleted.');
+=======
+        $users=User::all();
+        return redirect(route('admin'))->with('warning','user successfully Deleted.') ;
+>>>>>>> 657f72063665d84ad55de0a6a2e280a851895f98
     }
 }

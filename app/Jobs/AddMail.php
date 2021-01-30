@@ -2,7 +2,11 @@
 
 namespace App\Jobs;
 
+<<<<<<< HEAD
 use App\Mail\ReportFromUserMail;
+=======
+use App\Mail\SendingMail;
+>>>>>>> 657f72063665d84ad55de0a6a2e280a851895f98
 use App\Models\Advertising;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
@@ -43,7 +47,11 @@ class AddMail implements ShouldQueue
         
         foreach ($users as $user) {
 
+<<<<<<< HEAD
            Mail::to($user->email)->send(new ReportFromUserMail());
+=======
+           Mail::to($user->email)->send(new SendingMail());
+>>>>>>> 657f72063665d84ad55de0a6a2e280a851895f98
         }   
     }
 }

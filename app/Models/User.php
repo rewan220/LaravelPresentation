@@ -69,17 +69,26 @@ class User extends Authenticatable
     }
 
     //to get the user picture but it is done in the controller 
+<<<<<<< HEAD
     public function getPicturePathAttribute()
     {
         return '/storage/' . $this->picture;
+=======
+    public function getPicture()
+    {
+        return $this->profile->picture;
+>>>>>>> 657f72063665d84ad55de0a6a2e280a851895f98
     }
     public function profile()
     {
         return $this->hasOne(ProfilNew::class);
     }
+<<<<<<< HEAD
 
     public function comments()
     {
         return $this->hasOne(Comment::class, 'user_id');
     }
+=======
+>>>>>>> 657f72063665d84ad55de0a6a2e280a851895f98
 }
